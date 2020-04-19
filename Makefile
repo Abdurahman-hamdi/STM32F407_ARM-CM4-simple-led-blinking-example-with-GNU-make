@@ -2,7 +2,7 @@ PROJ_NAME = Blink
 output    =build
 CC      =  arm-atollic-eabi-gcc
 OBJCOPY  = arm-atollic-eabi-objcopy
-OBJDUMP  = arm-atollic-eabi-objdump
+
 
 
 
