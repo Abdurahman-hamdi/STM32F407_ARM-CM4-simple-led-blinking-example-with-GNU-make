@@ -34,11 +34,11 @@ objs       = $(addprefix $(output)/,$(OBJ_c_asm))
 
 ELF_FILE = $(output)/$(PROJ_NAME)
 
-all:  $(ELF_FILE).elf hex bin
+all:  ELF hex bin
 
 
-$(ELF_FILE).elf: $(objs)
-	$(CC) $(LDFLAGS) $^ -o $@ 
+ELF: $(objs)
+	$(CC) $(LDFLAGS) $^ -o $(ELF_FILE).elf 
 
 $(src_obj)/%.o:$(SRCDIR)/%.c
 	
