@@ -1,8 +1,9 @@
+
 PROJ_NAME = Blink
 output    =build
-CC      =  arm-atollic-eabi-gcc
-OBJCOPY  = arm-atollic-eabi-objcopy
-
+CC      =  arm-none-eabi-gcc
+OBJCOPY  = arm-none-eabi-objcopy
+stlink=sudo ~/stlink
 
 
 
@@ -61,14 +62,6 @@ bin: $(ELF_FILE).elf
 
 clean :
 	rm  *.hex *.bin $(output)/*.elf $(output)/*.map  $(library_objs)/*.o  $(src_obj)/*.o 
-
-
-
-
-
-
-
-
-
-
-
+# Flash the STM32F4
+burn:
+	$(stlink)/st-flash write $(PROJ_NAME).bin 0x8000000
